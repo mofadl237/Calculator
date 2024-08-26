@@ -1,0 +1,126 @@
+/*global styling*/
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+:root{
+    --color-main:#b32d2d;
+}
+body{
+    background-color: #000;
+    color:#FFF;
+}
+button{
+    width:50px;
+    height:50px;
+    text-align: center;
+    line-height: 50px;
+    border:none;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    font-size: 1.2rem;
+}
+.container{
+    width:100%;
+    height:80vh;
+    margin:10vh auto ;
+    padding:1.5rem;
+}
+/* .centerF{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    height:100%;
+    flex-direction: column;
+} */
+.centerF{
+    padding:1.5rem;
+    border:1px solid var(--color-main);
+    border-radius: .4rem;
+    -webkit-border-radius: .4rem;
+    -moz-border-radius: .4rem;
+    -ms-border-radius: .4rem;
+    -o-border-radius: .4rem;
+}
+.flex{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap:1rem;
+}
+.parent{
+    flex-grow: 1;
+    display: grid;
+    gap:.5rem;
+}
+/* Media Query For Laptop && Ipad*/
+@media(min-width:576px){
+    .container{
+        min-width:576px;
+        max-width: 650px;
+    }
+    button{
+        width:80px;
+    height:80px;
+    }
+}
+/*Styling Input*/
+input{
+    width:100%;
+    padding:.8rem .4rem;
+    height:3.5rem;
+    direction: rtl;
+    margin-bottom: .8rem;
+    background-color: transparent;
+    border:none;
+    color:var(--color-main);
+    font-size:2rem;
+    line-height: 2rem;
+}
+input:focus{
+    outline: none;
+}
+/*Style Parent Button*/
+.parent.Btn{
+    grid-template-rows: repeat(4,1fr);
+    grid-template-columns: repeat(3,1fr);
+}
+.parent.Btn-Operator{
+    grid-template-rows: repeat(4,1fr);
+    grid-template-columns: repeat(2,1fr);
+    justify-items: end;
+}
+.parent.Btn button[value="0"]{
+    grid-column: span 2;
+    width:calc(100% - 2rem);
+    border-radius: 4rem;
+    -webkit-border-radius: 4rem;
+    -moz-border-radius: 4rem;
+    -ms-border-radius: 4rem;
+    -o-border-radius: 4rem;
+}
+@media(max-width:576px){
+    .parent.Btn button[value="0"]{
+        width:calc(100% - .4rem);
+    }
+}
+@media(max-width:370px){
+     button{
+        width:40px;
+        height:40px;
+        line-height: 40px;
+    }
+}
+.parent.Btn-Operator button[value="1"]{
+    
+    grid-row: span 2;
+    height:100%;
+    background-color: var(--color-main);
+    border-radius: 4rem;
+}
